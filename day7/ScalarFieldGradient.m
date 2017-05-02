@@ -7,7 +7,7 @@ figure
 %operations.
 syms x y
 %f = 12-(x-2).^2 -(y-4).^2;
-f = sin(x) + cos(y);
+f = -1/norm([x y]);
 %f = 1/norm([x y]);
 %f = cos(x)*sin(y);
 
@@ -19,7 +19,7 @@ g = gradient(f,[x,y])
 hold off
 contour(X,Y,subs(f,[x,y],{X,Y}))
 
-G1 = subs(g(1),[x,y],{X1,Y1});
-G2 = subs(g(2),[x,y],{X1,Y1});
+G1 = -subs(g(1),[x,y],{X1,Y1});
+G2 = -subs(g(2),[x,y],{X1,Y1});
 hold on
 quiver(X1,Y1,G1,G2)
